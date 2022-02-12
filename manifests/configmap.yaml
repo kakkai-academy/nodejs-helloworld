@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  CLOUD_TYPE: vault
+  DB_PWD: ${dbPwd}
+  DB_USER: ${dbUser}
+  VAULT_ADDR: http://vault.secret-management.svc.cluster.local:8200
+  VAULT_PATH: kv/data/backend/dev/nodejs-hello
+  VAULT_ROLE: nodejs-hello-dev
+kind: ConfigMap
+metadata:
+  name: app-env
+  namespace: vault-demo

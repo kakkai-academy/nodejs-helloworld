@@ -1,0 +1,16 @@
+levis:
+  name: "nodejs-hello"
+  namespace: vault-demo
+  deployment:
+    enableHealthCheck: false
+    serviceAccount: nodejs-hello
+    containers:
+      image: "dmakeroam/nodejs-hello:1.0.4"
+      configEnvName: "app-env"
+      port: 3000
+  service:
+    enable: true
+    ports:
+    - name: "http"
+      port: 3000
+      targetPort: 3000
